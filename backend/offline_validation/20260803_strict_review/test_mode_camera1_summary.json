@@ -1,0 +1,1154 @@
+{
+  "tool": "Pharmacy Worker Monitor V2 offline backend video test",
+  "input_video": "C:\\Users\\BORAS\\Downloads\\pharmacy_worker_monitor_v2\\pharmacy_worker_monitor_v2\\backend\\demo\\test_4.mp4",
+  "output_video": "C:\\Users\\BORAS\\Downloads\\pharmacy_worker_monitor_v2\\pharmacy_worker_monitor_v2\\backend\\offline_validation\\20260803_strict_review\\test_mode_camera1.mp4",
+  "summary_json": "C:\\Users\\BORAS\\Downloads\\pharmacy_worker_monitor_v2\\pharmacy_worker_monitor_v2\\backend\\offline_validation\\20260803_strict_review\\test_mode_camera1_summary.json",
+  "event_csv": "C:\\Users\\BORAS\\Downloads\\pharmacy_worker_monitor_v2\\pharmacy_worker_monitor_v2\\backend\\offline_validation\\20260803_strict_review\\test_mode_camera1_events.csv",
+  "diagnostics_csv": "C:\\Users\\BORAS\\Downloads\\pharmacy_worker_monitor_v2\\pharmacy_worker_monitor_v2\\backend\\offline_validation\\20260803_strict_review\\test_mode_camera1_diagnostics.csv",
+  "customer_journey_csv": "C:\\Users\\BORAS\\Downloads\\pharmacy_worker_monitor_v2\\pharmacy_worker_monitor_v2\\backend\\offline_validation\\20260803_strict_review\\test_mode_camera1_customers.csv",
+  "manager_html": "C:\\Users\\BORAS\\Downloads\\pharmacy_worker_monitor_v2\\pharmacy_worker_monitor_v2\\backend\\offline_validation\\20260803_strict_review\\test_mode_camera1_manager.html",
+  "camera_id": 1,
+  "read_only_zone_load": true,
+  "video": {
+    "width": 960,
+    "height": 1080,
+    "fps": 25.0,
+    "source_frames": 1500,
+    "written_frames": 200,
+    "analyzed_frames": 40,
+    "duration_seconds": 8.0,
+    "analysis_every_n_frames": 5,
+    "wall_time_seconds": 55.703,
+    "audio_copied": false,
+    "stopped_by_user": false
+  },
+  "preview": {
+    "requested": false,
+    "displayed": false,
+    "controls": "Press Q or Esc in the preview window to stop safely."
+  },
+  "models": {
+    "person": true,
+    "lab_coat_verifier": true,
+    "pose": true,
+    "phone": true
+  },
+  "model_metadata": {
+    "person": {
+      "filename": "employee_customer.pt",
+      "path": "C:\\Users\\BORAS\\Downloads\\pharmacy_worker_monitor_v2\\pharmacy_worker_monitor_v2\\backend\\models\\employee_customer.pt",
+      "sha256": "7bd4e7dd5326c69ba1c0ed47f3f9a96cf88455945718e449d1f8c4b1505d97c8",
+      "class_names": [
+        "person",
+        "lab_coat"
+      ],
+      "input_size": 640,
+      "confidence_threshold": 0.25,
+      "dataset_name": "Codea user-provided employee/customer/lab-coat detector weights",
+      "dataset_version": "sha256-7bd4e7dd5326c69b",
+      "training_date": null,
+      "ultralytics_version": "8.3.51",
+      "pytorch_version": "2.5.1+cpu",
+      "device": "cpu",
+      "license": "User-provided weights; dataset and deployment rights require owner verification",
+      "known_limitations": [
+        "The original training images and validation metrics were not present in E:/codea.",
+        "Employee/customer role still requires temporal lab-coat and configured-zone evidence.",
+        "Accuracy must be measured on footage from each pharmacy camera."
+      ],
+      "loaded": true,
+      "error": null
+    },
+    "lab_coat_verifier": {
+      "filename": "labcoat.pt",
+      "path": "C:\\Users\\BORAS\\Downloads\\pharmacy_worker_monitor_v2\\pharmacy_worker_monitor_v2\\backend\\models\\labcoat.pt",
+      "sha256": "d6466c104c1fdbb75c7916b317803fbe63cc6f2e867215058c96d1f257677e8f",
+      "class_names": [
+        "lab_coat"
+      ],
+      "input_size": 640,
+      "confidence_threshold": 0.2,
+      "dataset_name": "Codea user-provided lab-coat verifier weights",
+      "dataset_version": "sha256-d6466c104c1fdbb7",
+      "training_date": null,
+      "ultralytics_version": "8.3.51",
+      "pytorch_version": "2.5.1+cpu",
+      "device": "cpu",
+      "license": "User-provided weights; dataset and deployment rights require owner verification",
+      "known_limitations": [
+        "This model supplies repeated worker-role evidence and does not identify a real person.",
+        "White clothing, occlusion, and lighting can create false or missed coat detections.",
+        "The verifier is throttled and fused with the primary person detector and zone evidence."
+      ],
+      "loaded": true,
+      "error": null
+    },
+    "pose": {
+      "filename": "yolo11n-pose.pt",
+      "path": "C:\\Users\\BORAS\\Downloads\\pharmacy_worker_monitor_v2\\pharmacy_worker_monitor_v2\\backend\\models\\yolo11n-pose.pt",
+      "sha256": "869e83fcdffdc7371fa4e34cd8e51c838cc729571d1635e5141e3075e9319dc0",
+      "class_names": [
+        "person"
+      ],
+      "input_size": 640,
+      "confidence_threshold": 0.15,
+      "dataset_name": null,
+      "dataset_version": null,
+      "training_date": null,
+      "ultralytics_version": "8.3.51",
+      "pytorch_version": "2.5.1+cpu",
+      "device": "cpu",
+      "license": null,
+      "known_limitations": [
+        "Accuracy is not measured for this pharmacy."
+      ],
+      "loaded": true,
+      "error": null
+    },
+    "phone": {
+      "filename": "phone_yolo.pt",
+      "path": "C:\\Users\\BORAS\\Downloads\\pharmacy_worker_monitor_v2\\pharmacy_worker_monitor_v2\\backend\\models\\phone_yolo.pt",
+      "sha256": "f59b3d833e2ff32e194b5bb8e08d211dc7c5bdf144b90d2c8412c47ccfc83b36",
+      "class_names": [
+        "person",
+        "bicycle",
+        "car",
+        "motorcycle",
+        "airplane",
+        "bus",
+        "train",
+        "truck",
+        "boat",
+        "traffic light",
+        "fire hydrant",
+        "stop sign",
+        "parking meter",
+        "bench",
+        "bird",
+        "cat",
+        "dog",
+        "horse",
+        "sheep",
+        "cow",
+        "elephant",
+        "bear",
+        "zebra",
+        "giraffe",
+        "backpack",
+        "umbrella",
+        "handbag",
+        "tie",
+        "suitcase",
+        "frisbee",
+        "skis",
+        "snowboard",
+        "sports ball",
+        "kite",
+        "baseball bat",
+        "baseball glove",
+        "skateboard",
+        "surfboard",
+        "tennis racket",
+        "bottle",
+        "wine glass",
+        "cup",
+        "fork",
+        "knife",
+        "spoon",
+        "bowl",
+        "banana",
+        "apple",
+        "sandwich",
+        "orange",
+        "broccoli",
+        "carrot",
+        "hot dog",
+        "pizza",
+        "donut",
+        "cake",
+        "chair",
+        "couch",
+        "potted plant",
+        "bed",
+        "dining table",
+        "toilet",
+        "tv",
+        "laptop",
+        "mouse",
+        "remote",
+        "keyboard",
+        "cell phone",
+        "microwave",
+        "oven",
+        "toaster",
+        "sink",
+        "refrigerator",
+        "book",
+        "clock",
+        "vase",
+        "scissors",
+        "teddy bear",
+        "hair drier",
+        "toothbrush"
+      ],
+      "input_size": 640,
+      "confidence_threshold": 0.002,
+      "dataset_name": null,
+      "dataset_version": null,
+      "training_date": null,
+      "ultralytics_version": "8.3.51",
+      "pytorch_version": "2.5.1+cpu",
+      "device": "cpu",
+      "license": null,
+      "known_limitations": [
+        "Accuracy is not measured for this pharmacy."
+      ],
+      "loaded": true,
+      "error": null
+    }
+  },
+  "detection_diagnostics": {
+    "fusion_reduction": 146,
+    "geometry_rejected": 0,
+    "primary_candidates": 237,
+    "tracking_detections": 130,
+    "verifier_coat_candidates": 39
+  },
+  "zones": [
+    {
+      "display_name": "worker1",
+      "zone_type": "employee_area",
+      "normalized_points": [
+        [
+          0.00630733944954122,
+          0.5244648318042814
+        ],
+        [
+          0.0028669724770641553,
+          0.5840978593272171
+        ],
+        [
+          0.047591743119266,
+          0.6697247706422018
+        ],
+        [
+          0.11811926605504582,
+          0.7951070336391437
+        ],
+        [
+          0.17316513761467886,
+          0.8960244648318043
+        ],
+        [
+          0.2402522935779816,
+          0.9923547400611621
+        ],
+        [
+          0.40194954128440363,
+          0.9954128440366973
+        ],
+        [
+          0.4862385321100917,
+          0.9954128440366973
+        ],
+        [
+          0.6651376146788991,
+          0.9954128440366973
+        ],
+        [
+          0.742545871559633,
+          0.9954128440366973
+        ],
+        [
+          0.7563073394495413,
+          0.8914373088685015
+        ],
+        [
+          0.7786697247706422,
+          0.8608562691131498
+        ],
+        [
+          0.7769495412844037,
+          0.7507645259938838
+        ],
+        [
+          0.7821100917431193,
+          0.6284403669724771
+        ],
+        [
+          0.7786697247706422,
+          0.26299694189602446
+        ],
+        [
+          0.6634174311926606,
+          0.23700305810397554
+        ],
+        [
+          0.661697247706422,
+          0.26146788990825687
+        ],
+        [
+          0.6651376146788991,
+          0.27675840978593275
+        ],
+        [
+          0.6599770642201835,
+          0.29510703363914376
+        ],
+        [
+          0.6444954128440367,
+          0.3256880733944954
+        ],
+        [
+          0.6307339449541285,
+          0.3394495412844037
+        ],
+        [
+          0.6135321100917431,
+          0.3379204892966361
+        ],
+        [
+          0.5980504587155964,
+          0.345565749235474
+        ],
+        [
+          0.6014908256880734,
+          0.3547400611620795
+        ],
+        [
+          0.6118119266055047,
+          0.382262996941896
+        ],
+        [
+          0.6169724770642202,
+          0.41131498470948014
+        ],
+        [
+          0.6118119266055047,
+          0.42966360856269115
+        ],
+        [
+          0.6014908256880734,
+          0.4648318042813456
+        ],
+        [
+          0.5963302752293578,
+          0.4709480122324159
+        ],
+        [
+          0.5756880733944955,
+          0.481651376146789
+        ],
+        [
+          0.5653669724770642,
+          0.4908256880733945
+        ],
+        [
+          0.5309633027522935,
+          0.4969418960244648
+        ],
+        [
+          0.5103211009174312,
+          0.4984709480122324
+        ],
+        [
+          0.49311926605504586,
+          0.4923547400611621
+        ],
+        [
+          0.47591743119266056,
+          0.4831804281345566
+        ],
+        [
+          0.4673165137614679,
+          0.4648318042813456
+        ],
+        [
+          0.46043577981651373,
+          0.43883792048929665
+        ],
+        [
+          0.4587155963302752,
+          0.42660550458715596
+        ],
+        [
+          0.46043577981651373,
+          0.41284403669724773
+        ],
+        [
+          0.4690366972477064,
+          0.3929663608562691
+        ],
+        [
+          0.4638761467889908,
+          0.30428134556574926
+        ],
+        [
+          0.474197247706422,
+          0.24770642201834864
+        ],
+        [
+          0.4552752293577982,
+          0.2324159021406728
+        ],
+        [
+          0.4501146788990826,
+          0.24617737003058104
+        ],
+        [
+          0.43463302752293576,
+          0.27217125382262997
+        ],
+        [
+          0.4139908256880734,
+          0.28287461773700306
+        ],
+        [
+          0.40366972477064217,
+          0.290519877675841
+        ],
+        [
+          0.3744266055045871,
+          0.29510703363914376
+        ],
+        [
+          0.2935779816513761,
+          0.25535168195718655
+        ],
+        [
+          0.2712155963302752,
+          0.28287461773700306
+        ],
+        [
+          0.260894495412844,
+          0.30275229357798167
+        ],
+        [
+          0.2660550458715596,
+          0.3211009174311927
+        ],
+        [
+          0.27293577981651373,
+          0.327217125382263
+        ],
+        [
+          0.2712155963302752,
+          0.3562691131498471
+        ],
+        [
+          0.25573394495412843,
+          0.3746177370030581
+        ],
+        [
+          0.2282110091743119,
+          0.3837920489296636
+        ],
+        [
+          0.2127293577981651,
+          0.39143730886850153
+        ],
+        [
+          0.19380733944954123,
+          0.39143730886850153
+        ],
+        [
+          0.1817660550458715,
+          0.38837920489296635
+        ],
+        [
+          0.16456422018348618,
+          0.37767584097859325
+        ],
+        [
+          0.15080275229357792,
+          0.3837920489296636
+        ],
+        [
+          0.14220183486238527,
+          0.39755351681957185
+        ],
+        [
+          0.1387614678899082,
+          0.40825688073394495
+        ],
+        [
+          0.12327981651376142,
+          0.42507645259938837
+        ],
+        [
+          0.11123853211009169,
+          0.43730886850152906
+        ],
+        [
+          0.10263761467889904,
+          0.45565749235474007
+        ],
+        [
+          0.08715596330275224,
+          0.4602446483180428
+        ],
+        [
+          0.06651376146788986,
+          0.4602446483180428
+        ],
+        [
+          0.014908256880733882,
+          0.5152905198776758
+        ]
+      ],
+      "enabled": true
+    },
+    {
+      "display_name": "customer1",
+      "zone_type": "customer_area",
+      "normalized_points": [
+        [
+          0.7614678899082569,
+          0.8486238532110092
+        ],
+        [
+          0.49311926605504586,
+          0.7477064220183486
+        ],
+        [
+          0.6668577981651377,
+          0.3119266055045872
+        ],
+        [
+          0.7752293577981652,
+          0.3180428134556575
+        ]
+      ],
+      "enabled": true
+    },
+    {
+      "display_name": "waiting1",
+      "zone_type": "waiting",
+      "normalized_points": [
+        [
+          0.661697247706422,
+          0.31345565749235477
+        ],
+        [
+          0.49311926605504586,
+          0.7370030581039755
+        ],
+        [
+          0.7580275229357798,
+          0.8394495412844036
+        ],
+        [
+          0.7803899082568808,
+          0.3195718654434251
+        ]
+      ],
+      "enabled": true
+    },
+    {
+      "display_name": "entrance1",
+      "zone_type": "entrance",
+      "normalized_points": [
+        [
+          0.0028669724770641553,
+          0.5290519877675841
+        ],
+        [
+          0.001146788990825623,
+          0.5718654434250765
+        ],
+        [
+          0.00630733944954122,
+          0.591743119266055
+        ],
+        [
+          0.023509174311926544,
+          0.6162079510703364
+        ],
+        [
+          0.05791284403669719,
+          0.5886850152905199
+        ],
+        [
+          0.08715596330275224,
+          0.5489296636085627
+        ],
+        [
+          0.11295871559633022,
+          0.5107033639143731
+        ],
+        [
+          0.11983944954128435,
+          0.4709480122324159
+        ],
+        [
+          0.09575688073394491,
+          0.45871559633027525
+        ],
+        [
+          0.07339449541284399,
+          0.4648318042813456
+        ],
+        [
+          0.06651376146788986,
+          0.4648318042813456
+        ]
+      ],
+      "enabled": true
+    },
+    {
+      "display_name": "shelf_interaction1",
+      "zone_type": "shelf_interaction",
+      "normalized_points": [
+        [
+          0.01318807339449535,
+          0.5902140672782875
+        ],
+        [
+          0.038990825688073334,
+          0.6406727828746177
+        ],
+        [
+          0.06307339449541279,
+          0.6957186544342507
+        ],
+        [
+          0.0905963302752293,
+          0.7629969418960245
+        ],
+        [
+          0.1060779816513761,
+          0.7889908256880734
+        ],
+        [
+          0.12672018348623848,
+          0.8165137614678899
+        ],
+        [
+          0.14048165137614674,
+          0.8394495412844036
+        ],
+        [
+          0.154243119266055,
+          0.8685015290519877
+        ],
+        [
+          0.16628440366972472,
+          0.8868501529051988
+        ],
+        [
+          0.17144495412844032,
+          0.8944954128440367
+        ],
+        [
+          0.2333715596330275,
+          0.9954128440366973
+        ],
+        [
+          0.7528669724770642,
+          0.9938837920489296
+        ],
+        [
+          0.7649082568807339,
+          0.8868501529051988
+        ],
+        [
+          0.7769495412844037,
+          0.7140672782874617
+        ],
+        [
+          0.7838302752293579,
+          0.26605504587155965
+        ],
+        [
+          0.7511467889908258,
+          0.2599388379204893
+        ],
+        [
+          0.7115825688073395,
+          0.8318042813455657
+        ],
+        [
+          0.154243119266055,
+          0.4969418960244648
+        ],
+        [
+          0.02006880733944948,
+          0.5932721712538226
+        ]
+      ],
+      "enabled": true
+    },
+    {
+      "display_name": "shelf_interaction11",
+      "zone_type": "shelf_interaction",
+      "normalized_points": [
+        [
+          0.661697247706422,
+          0.25382262996941896
+        ],
+        [
+          0.6530963302752294,
+          0.29357798165137616
+        ],
+        [
+          0.6444954128440367,
+          0.3180428134556575
+        ],
+        [
+          0.632454128440367,
+          0.3318042813455658
+        ],
+        [
+          0.5963302752293578,
+          0.3333333333333333
+        ],
+        [
+          0.5963302752293578,
+          0.35015290519877673
+        ],
+        [
+          0.6100917431192661,
+          0.3730886850152905
+        ],
+        [
+          0.6118119266055047,
+          0.38990825688073394
+        ],
+        [
+          0.6118119266055047,
+          0.40825688073394495
+        ],
+        [
+          0.6100917431192661,
+          0.42507645259938837
+        ],
+        [
+          0.6100917431192661,
+          0.44036697247706424
+        ],
+        [
+          0.6049311926605505,
+          0.4525993883792049
+        ],
+        [
+          0.6032110091743119,
+          0.45871559633027525
+        ],
+        [
+          0.5722477064220184,
+          0.481651376146789
+        ],
+        [
+          0.5533256880733946,
+          0.4847094801223242
+        ],
+        [
+          0.5086009174311926,
+          0.4908256880733945
+        ],
+        [
+          0.48107798165137616,
+          0.4908256880733945
+        ],
+        [
+          0.4690366972477064,
+          0.4724770642201835
+        ],
+        [
+          0.4587155963302752,
+          0.45718654434250766
+        ],
+        [
+          0.4569954128440367,
+          0.42813455657492355
+        ],
+        [
+          0.4569954128440367,
+          0.41590214067278286
+        ],
+        [
+          0.4569954128440367,
+          0.40214067278287463
+        ],
+        [
+          0.46043577981651373,
+          0.39143730886850153
+        ],
+        [
+          0.46559633027522934,
+          0.3730886850152905
+        ],
+        [
+          0.4724770642201835,
+          0.3470948012232416
+        ],
+        [
+          0.474197247706422,
+          0.3165137614678899
+        ],
+        [
+          0.474197247706422,
+          0.29510703363914376
+        ],
+        [
+          0.474197247706422,
+          0.2706422018348624
+        ],
+        [
+          0.4690366972477064,
+          0.25688073394495414
+        ],
+        [
+          0.4638761467889908,
+          0.23700305810397554
+        ],
+        [
+          0.4518348623853211,
+          0.23394495412844038
+        ],
+        [
+          0.4363532110091743,
+          0.26452599388379205
+        ],
+        [
+          0.40194954128440363,
+          0.290519877675841
+        ],
+        [
+          0.3967889908256881,
+          0.29357798165137616
+        ],
+        [
+          0.3606651376146789,
+          0.29204892966360857
+        ],
+        [
+          0.34862385321100914,
+          0.2874617737003058
+        ],
+        [
+          0.29529816513761464,
+          0.26146788990825687
+        ],
+        [
+          0.28325688073394495,
+          0.2599388379204893
+        ],
+        [
+          0.26777522935779813,
+          0.28134556574923547
+        ],
+        [
+          0.2660550458715596,
+          0.3073394495412844
+        ],
+        [
+          0.26949541284403666,
+          0.3318042813455658
+        ],
+        [
+          0.2815366972477064,
+          0.3409785932721712
+        ],
+        [
+          0.26949541284403666,
+          0.36085626911314983
+        ],
+        [
+          0.22305045871559628,
+          0.3837920489296636
+        ],
+        [
+          0.1903669724770642,
+          0.39143730886850153
+        ],
+        [
+          0.17144495412844032,
+          0.38990825688073394
+        ],
+        [
+          0.16284403669724767,
+          0.41131498470948014
+        ],
+        [
+          0.17832568807339447,
+          0.4235474006116208
+        ],
+        [
+          0.22993119266055043,
+          0.42507645259938837
+        ],
+        [
+          0.2849770642201835,
+          0.41743119266055045
+        ],
+        [
+          0.29529816513761464,
+          0.4418960244648318
+        ],
+        [
+          0.3211009174311926,
+          0.4541284403669725
+        ],
+        [
+          0.33658256880733944,
+          0.45871559633027525
+        ],
+        [
+          0.3623853211009174,
+          0.46636085626911317
+        ],
+        [
+          0.4002293577981651,
+          0.481651376146789
+        ],
+        [
+          0.42259174311926606,
+          0.5152905198776758
+        ],
+        [
+          0.4587155963302752,
+          0.5336391437308868
+        ],
+        [
+          0.4948394495412844,
+          0.5382262996941896
+        ],
+        [
+          0.5326834862385321,
+          0.5504587155963303
+        ],
+        [
+          0.5619266055045872,
+          0.5412844036697247
+        ],
+        [
+          0.6014908256880734,
+          0.5290519877675841
+        ],
+        [
+          0.6290137614678899,
+          0.5137614678899083
+        ],
+        [
+          0.6530963302752294,
+          0.4938837920489297
+        ],
+        [
+          0.6530963302752294,
+          0.46788990825688076
+        ],
+        [
+          0.6806192660550459,
+          0.26452599388379205
+        ],
+        [
+          0.6634174311926606,
+          0.24770642201834864
+        ]
+      ],
+      "enabled": true
+    }
+  ],
+  "semantics": {
+    "WORK_OBSERVED": "Positive observed work evidence; not a complete productivity judgment.",
+    "REVIEW_NEEDED": "Possible phone or idle evidence that needs human review.",
+    "CUSTOMER_OBSERVED": "A customer was observed; this is not a work-status label.",
+    "INSUFFICIENT_EVIDENCE": "The system does not have enough evidence for a stronger label.",
+    "APPROVED_BREAK": "A worker was observed in the configured break area."
+  },
+  "identity": {
+    "scope": "anonymous, camera-local, and limited to this video run",
+    "short_loss_recovery": "velocity prediction plus conservative clothing/spatial stitching",
+    "session_stitches": [],
+    "limitations": "Worker labels are not real employee identities. Clothing similarity can confuse workers in the same uniform, and there is no face recognition or cross-video identity matching in this test."
+  },
+  "dataset_export": null,
+  "summary": {
+    "unique_track_ids": 4,
+    "unique_entities": 4,
+    "anonymous_worker_sessions": 4,
+    "max_people_visible": 4,
+    "evidence_status_seconds": {
+      "INSUFFICIENT_EVIDENCE": 23.8,
+      "WORK_OBSERVED": 1.4
+    },
+    "activity_seconds": {
+      "SHELF_WORK": 1.4,
+      "UNKNOWN": 23.8
+    },
+    "phone_evidence_seconds": {
+      "Confirmed physical phone": 4.8,
+      "No phone evidence": 6.4,
+      "Not evaluated for this role": 2.6,
+      "Phone-like pose only": 10.6,
+      "Physical phone candidate": 0.8
+    },
+    "event_count": 5,
+    "tracks": [
+      {
+        "entity_id": "WS-20000101-C1-574B38-10000001",
+        "worker_session_id": "WS-20000101-C1-574B38-10000001",
+        "worker_label": "Worker 1",
+        "track_id": 10000001,
+        "track_ids": [
+          10000001
+        ],
+        "first_seen_seconds": 0.2,
+        "last_seen_seconds": 7.96,
+        "observed_seconds": 7.8,
+        "roles": {
+          "UNKNOWN": 0.2,
+          "WORKER": 7.6
+        },
+        "activities": {
+          "UNKNOWN": 7.8
+        },
+        "evidence_statuses": {
+          "INSUFFICIENT_EVIDENCE": 7.8
+        },
+        "phone_evidence": {
+          "Not evaluated for this role": 0.2,
+          "Phone-like pose only": 7.2000000000000055,
+          "No phone evidence": 0.39999999999999997
+        },
+        "zones": {
+          "employee_area": 180,
+          "shelf_interaction": 15
+        },
+        "max_confidence": 0.7736,
+        "phone_evidence_seconds": {
+          "No phone evidence": 0.4,
+          "Not evaluated for this role": 0.2,
+          "Phone-like pose only": 7.2
+        }
+      },
+      {
+        "entity_id": "WS-20000101-C1-574B38-10000002",
+        "worker_session_id": "WS-20000101-C1-574B38-10000002",
+        "worker_label": "Worker 2",
+        "track_id": 10000002,
+        "track_ids": [
+          10000002
+        ],
+        "first_seen_seconds": 0.2,
+        "last_seen_seconds": 7.96,
+        "observed_seconds": 7.8,
+        "roles": {
+          "UNKNOWN": 0.2,
+          "WORKER": 7.6
+        },
+        "activities": {
+          "SHELF_WORK": 1.4,
+          "UNKNOWN": 6.4
+        },
+        "evidence_statuses": {
+          "INSUFFICIENT_EVIDENCE": 6.4,
+          "WORK_OBSERVED": 1.4
+        },
+        "phone_evidence": {
+          "Not evaluated for this role": 0.2,
+          "Phone-like pose only": 1.800000000000001,
+          "Physical phone candidate": 0.39999999999999997,
+          "Confirmed physical phone": 4.800000000000003,
+          "No phone evidence": 0.6
+        },
+        "zones": {
+          "shelf_interaction": 165,
+          "waiting": 25,
+          "employee_area": 5
+        },
+        "max_confidence": 0.7074,
+        "phone_evidence_seconds": {
+          "Confirmed physical phone": 4.8,
+          "No phone evidence": 0.6,
+          "Not evaluated for this role": 0.2,
+          "Phone-like pose only": 1.8,
+          "Physical phone candidate": 0.4
+        }
+      },
+      {
+        "entity_id": "WS-20000101-C1-574B38-10000003",
+        "worker_session_id": "WS-20000101-C1-574B38-10000003",
+        "worker_label": "Worker 3",
+        "track_id": 10000003,
+        "track_ids": [
+          10000003
+        ],
+        "first_seen_seconds": 0.2,
+        "last_seen_seconds": 7.96,
+        "observed_seconds": 6.8,
+        "roles": {
+          "UNKNOWN": 0.2,
+          "WORKER": 6.6
+        },
+        "activities": {
+          "UNKNOWN": 6.8
+        },
+        "evidence_statuses": {
+          "INSUFFICIENT_EVIDENCE": 6.8
+        },
+        "phone_evidence": {
+          "Not evaluated for this role": 0.2,
+          "Phone-like pose only": 1.0000000000000002,
+          "No phone evidence": 5.200000000000004,
+          "Physical phone candidate": 0.39999999999999997
+        },
+        "zones": {
+          "shelf_interaction": 125,
+          "employee_area": 5
+        },
+        "max_confidence": 0.69,
+        "phone_evidence_seconds": {
+          "No phone evidence": 5.2,
+          "Not evaluated for this role": 0.2,
+          "Phone-like pose only": 1.0,
+          "Physical phone candidate": 0.4
+        }
+      },
+      {
+        "entity_id": "WS-20000101-C1-574B38-10000004",
+        "worker_session_id": "WS-20000101-C1-574B38-10000004",
+        "worker_label": "Worker 4",
+        "track_id": 10000004,
+        "track_ids": [
+          10000004
+        ],
+        "first_seen_seconds": 5.2,
+        "last_seen_seconds": 7.96,
+        "observed_seconds": 2.8,
+        "roles": {
+          "UNKNOWN": 2.0,
+          "WORKER": 0.8
+        },
+        "activities": {
+          "UNKNOWN": 2.8
+        },
+        "evidence_statuses": {
+          "INSUFFICIENT_EVIDENCE": 2.8
+        },
+        "phone_evidence": {
+          "Not evaluated for this role": 2.000000000000001,
+          "Phone-like pose only": 0.6,
+          "No phone evidence": 0.2
+        },
+        "zones": {
+          "employee_area": 40,
+          "shelf_interaction": 30
+        },
+        "max_confidence": 0.7352,
+        "phone_evidence_seconds": {
+          "No phone evidence": 0.2,
+          "Not evaluated for this role": 2.0,
+          "Phone-like pose only": 0.6
+        }
+      }
+    ]
+  },
+  "ground_truth_csv": null,
+  "ground_truth_evaluation": null,
+  "repeatability": {
+    "deterministic_session_id": "test_4-1758304121f9",
+    "signature": "a4c21fff539da159c10226386c22ab098817b02b2b53e2662b1c50cc56407619"
+  }
+}

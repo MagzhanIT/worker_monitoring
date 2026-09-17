@@ -1,0 +1,11 @@
+{
+  "dataset_name": "Codea user-provided lab-coat verifier weights",
+  "dataset_version": "sha256-d6466c104c1fdbb7",
+  "training_date": null,
+  "license": "User-provided weights; dataset and deployment rights require owner verification",
+  "known_limitations": [
+    "This model supplies repeated worker-role evidence and does not identify a real person.",
+    "White clothing, occlusion, and lighting can create false or missed coat detections.",
+    "The verifier is throttled and fused with the primary person detector and zone evidence."
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "dataset_name": "Codea user-provided employee/customer/lab-coat detector weights",
+  "dataset_version": "sha256-7bd4e7dd5326c69b",
+  "training_date": null,
+  "license": "User-provided weights; dataset and deployment rights require owner verification",
+  "known_limitations": [
+    "The original training images and validation metrics were not present in E:/codea.",
+    "Employee/customer role still requires temporal lab-coat and configured-zone evidence.",
+    "Accuracy must be measured on footage from each pharmacy camera."
+  ]
+}

@@ -1,0 +1,277 @@
+{
+  "tool": "Pharmacy Worker Monitor V2 offline backend video test",
+  "input_video": "E:\\person_halat.mp4",
+  "output_video": "C:\\Users\\BORAS\\Downloads\\pharmacy_worker_monitor_v2\\pharmacy_worker_monitor_v2\\backend\\offline_test_artifacts\\e_drive_service_audit\\person_halat.mp4",
+  "summary_json": "C:\\Users\\BORAS\\Downloads\\pharmacy_worker_monitor_v2\\pharmacy_worker_monitor_v2\\backend\\offline_test_artifacts\\e_drive_service_audit\\person_halat.json",
+  "camera_id": null,
+  "read_only_zone_load": false,
+  "video": {
+    "width": 960,
+    "height": 1080,
+    "fps": 25.0,
+    "source_frames": 4500,
+    "written_frames": 50,
+    "analyzed_frames": 10,
+    "duration_seconds": 2.0,
+    "analysis_every_n_frames": 5,
+    "wall_time_seconds": 7.328,
+    "audio_copied": false,
+    "stopped_by_user": false
+  },
+  "preview": {
+    "requested": false,
+    "displayed": false,
+    "controls": "Press Q or Esc in the preview window to stop safely."
+  },
+  "models": {
+    "person": true,
+    "lab_coat_verifier": true,
+    "pose": false,
+    "phone": false
+  },
+  "model_metadata": {
+    "person": {
+      "filename": "employee_customer.pt",
+      "path": "C:\\Users\\BORAS\\Downloads\\pharmacy_worker_monitor_v2\\pharmacy_worker_monitor_v2\\backend\\models\\employee_customer.pt",
+      "sha256": "7bd4e7dd5326c69ba1c0ed47f3f9a96cf88455945718e449d1f8c4b1505d97c8",
+      "class_names": [
+        "person",
+        "lab_coat"
+      ],
+      "input_size": 640,
+      "confidence_threshold": 0.25,
+      "dataset_name": "Codea user-provided employee/customer/lab-coat detector weights",
+      "dataset_version": "sha256-7bd4e7dd5326c69b",
+      "training_date": null,
+      "ultralytics_version": "8.3.51",
+      "pytorch_version": "2.5.1+cpu",
+      "device": "cpu",
+      "license": "User-provided weights; dataset and deployment rights require owner verification",
+      "known_limitations": [
+        "The original training images and validation metrics were not present in E:/codea.",
+        "Employee/customer role still requires temporal lab-coat and configured-zone evidence.",
+        "Accuracy must be measured on footage from each pharmacy camera."
+      ],
+      "loaded": true,
+      "error": null
+    },
+    "lab_coat_verifier": {
+      "filename": "labcoat.pt",
+      "path": "C:\\Users\\BORAS\\Downloads\\pharmacy_worker_monitor_v2\\pharmacy_worker_monitor_v2\\backend\\models\\labcoat.pt",
+      "sha256": "d6466c104c1fdbb75c7916b317803fbe63cc6f2e867215058c96d1f257677e8f",
+      "class_names": [
+        "lab_coat"
+      ],
+      "input_size": 640,
+      "confidence_threshold": 0.2,
+      "dataset_name": "Codea user-provided lab-coat verifier weights",
+      "dataset_version": "sha256-d6466c104c1fdbb7",
+      "training_date": null,
+      "ultralytics_version": "8.3.51",
+      "pytorch_version": "2.5.1+cpu",
+      "device": "cpu",
+      "license": "User-provided weights; dataset and deployment rights require owner verification",
+      "known_limitations": [
+        "This model supplies repeated worker-role evidence and does not identify a real person.",
+        "White clothing, occlusion, and lighting can create false or missed coat detections.",
+        "The verifier is throttled and fused with the primary person detector and zone evidence."
+      ],
+      "loaded": true,
+      "error": null
+    }
+  },
+  "detection_diagnostics": {
+    "fusion_reduction": 41,
+    "geometry_rejected": 0,
+    "primary_candidates": 69,
+    "tracking_detections": 41,
+    "verifier_coat_candidates": 13
+  },
+  "zones": [],
+  "semantics": {
+    "WORK_OBSERVED": "Positive observed work evidence; not a complete productivity judgment.",
+    "REVIEW_NEEDED": "Possible phone or idle evidence that needs human review.",
+    "CUSTOMER_OBSERVED": "A customer was observed; this is not a work-status label.",
+    "INSUFFICIENT_EVIDENCE": "The system does not have enough evidence for a stronger label.",
+    "APPROVED_BREAK": "A worker was observed in the configured break area."
+  },
+  "identity": {
+    "scope": "anonymous, camera-local, and limited to this video run",
+    "short_loss_recovery": "velocity prediction plus conservative clothing/spatial stitching",
+    "session_stitches": [],
+    "limitations": "Worker labels are not real employee identities. Clothing similarity can confuse workers in the same uniform, and there is no face recognition or cross-video identity matching in this test."
+  },
+  "dataset_export": null,
+  "summary": {
+    "unique_track_ids": 5,
+    "unique_entities": 5,
+    "anonymous_worker_sessions": 3,
+    "max_people_visible": 5,
+    "evidence_status_seconds": {
+      "INSUFFICIENT_EVIDENCE": 7.2
+    },
+    "activity_seconds": {
+      "UNKNOWN": 7.2
+    },
+    "phone_evidence_seconds": {
+      "No phone evidence": 3.0,
+      "Not evaluated for this role": 4.2
+    },
+    "tracks": [
+      {
+        "entity_id": "TRACK-1",
+        "worker_session_id": null,
+        "worker_label": null,
+        "track_id": 1,
+        "track_ids": [
+          1
+        ],
+        "first_seen_seconds": 0.2,
+        "last_seen_seconds": 1.96,
+        "observed_seconds": 1.8,
+        "roles": {
+          "UNKNOWN": 1.8
+        },
+        "activities": {
+          "UNKNOWN": 1.8
+        },
+        "evidence_statuses": {
+          "INSUFFICIENT_EVIDENCE": 1.8
+        },
+        "phone_evidence": {
+          "Not evaluated for this role": 1.800000000000001
+        },
+        "zones": {},
+        "max_confidence": 0.8089,
+        "phone_evidence_seconds": {
+          "Not evaluated for this role": 1.8
+        }
+      },
+      {
+        "entity_id": "TRACK-4",
+        "worker_session_id": null,
+        "worker_label": null,
+        "track_id": 4,
+        "track_ids": [
+          4
+        ],
+        "first_seen_seconds": 0.2,
+        "last_seen_seconds": 1.96,
+        "observed_seconds": 1.6,
+        "roles": {
+          "UNKNOWN": 1.6
+        },
+        "activities": {
+          "UNKNOWN": 1.6
+        },
+        "evidence_statuses": {
+          "INSUFFICIENT_EVIDENCE": 1.6
+        },
+        "phone_evidence": {
+          "Not evaluated for this role": 1.6000000000000008
+        },
+        "zones": {},
+        "max_confidence": 0.7407,
+        "phone_evidence_seconds": {
+          "Not evaluated for this role": 1.6
+        }
+      },
+      {
+        "entity_id": "WS-20260725-C0-B74D3E-002",
+        "worker_session_id": "WS-20260725-C0-B74D3E-002",
+        "worker_label": "Worker 1",
+        "track_id": 2,
+        "track_ids": [
+          2
+        ],
+        "first_seen_seconds": 0.2,
+        "last_seen_seconds": 1.16,
+        "observed_seconds": 1.0,
+        "roles": {
+          "UNKNOWN": 0.2,
+          "WORKER": 0.8
+        },
+        "activities": {
+          "UNKNOWN": 1.0
+        },
+        "evidence_statuses": {
+          "INSUFFICIENT_EVIDENCE": 1.0
+        },
+        "phone_evidence": {
+          "Not evaluated for this role": 0.2,
+          "No phone evidence": 0.8000000000000002
+        },
+        "zones": {},
+        "max_confidence": 0.7085,
+        "phone_evidence_seconds": {
+          "No phone evidence": 0.8,
+          "Not evaluated for this role": 0.2
+        }
+      },
+      {
+        "entity_id": "WS-20260725-C0-B74D3E-003",
+        "worker_session_id": "WS-20260725-C0-B74D3E-003",
+        "worker_label": "Worker 2",
+        "track_id": 3,
+        "track_ids": [
+          3
+        ],
+        "first_seen_seconds": 0.2,
+        "last_seen_seconds": 1.96,
+        "observed_seconds": 1.8,
+        "roles": {
+          "UNKNOWN": 0.2,
+          "WORKER": 1.6
+        },
+        "activities": {
+          "UNKNOWN": 1.8
+        },
+        "evidence_statuses": {
+          "INSUFFICIENT_EVIDENCE": 1.8
+        },
+        "phone_evidence": {
+          "Not evaluated for this role": 0.2,
+          "No phone evidence": 1.6000000000000008
+        },
+        "zones": {},
+        "max_confidence": 0.6831,
+        "phone_evidence_seconds": {
+          "No phone evidence": 1.6,
+          "Not evaluated for this role": 0.2
+        }
+      },
+      {
+        "entity_id": "WS-20260725-C0-B74D3E-005",
+        "worker_session_id": "WS-20260725-C0-B74D3E-005",
+        "worker_label": "Worker 3",
+        "track_id": 5,
+        "track_ids": [
+          5
+        ],
+        "first_seen_seconds": 1.0,
+        "last_seen_seconds": 1.96,
+        "observed_seconds": 1.0,
+        "roles": {
+          "UNKNOWN": 0.4,
+          "WORKER": 0.6
+        },
+        "activities": {
+          "UNKNOWN": 1.0
+        },
+        "evidence_statuses": {
+          "INSUFFICIENT_EVIDENCE": 1.0
+        },
+        "phone_evidence": {
+          "Not evaluated for this role": 0.39999999999999997,
+          "No phone evidence": 0.6
+        },
+        "zones": {},
+        "max_confidence": 0.7183,
+        "phone_evidence_seconds": {
+          "No phone evidence": 0.6,
+          "Not evaluated for this role": 0.4
+        }
+      }
+    ]
+  }
+}

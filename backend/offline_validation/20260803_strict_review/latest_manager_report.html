@@ -1,0 +1,144 @@
+<!doctype html>
+<html><head><meta charset='utf-8'><title>Worker Activity Report</title>
+<style>
+body{font:15px system-ui;max-width:1180px;margin:36px auto;padding:0 18px;color:#17342d;background:#f6f8f6}
+h1,h2,h3{color:#075e54} article,.summary,.note,.glossary{background:white;padding:20px;margin:14px 0;border:1px solid #d9e3df;border-radius:12px}
+.summary-grid,.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:10px}
+.summary-grid div,.facts div{background:#f4f8f6;padding:12px;border-radius:8px} .facts span{display:block;color:#59716a;font-size:13px}
+.summary-grid span,.summary-grid strong{display:block} .summary-grid span{color:#425b54;font-size:13px} .summary-grid strong,.facts strong{display:block;margin-top:5px;font-size:20px} .worker-head{display:flex;justify-content:space-between;align-items:flex-start;gap:18px;flex-wrap:wrap}
+.session-id{font-family:ui-monospace,monospace;overflow-wrap:anywhere} .previews{display:flex;gap:12px;flex-wrap:wrap} figure{margin:0}
+img{width:180px;height:140px;object-fit:contain;background:#eaf0ed;border-radius:9px} figcaption,.muted{color:#59716a;font-size:13px}
+table{width:100%;border-collapse:collapse;margin-top:8px} th,td{text-align:left;padding:9px;border-bottom:1px solid #dde5e1;vertical-align:top}
+details{margin-top:16px} summary{cursor:pointer;font-weight:700;color:#075e54} .note{border-left:4px solid #c57b00}
+.identity{display:inline-block;padding:5px 9px;border-radius:999px;background:#eef2f0;font-weight:700} .identity-manager_confirmed{background:#dff3e8;color:#176343}
+.identity-review_required,.identity-appearance_matched{background:#fff0ce;color:#805000}
+.filters{display:flex;gap:10px;flex-wrap:wrap;margin:12px 0} input,select{font:inherit;padding:10px 12px;border:1px solid #b8c8c1;border-radius:8px;background:white} #workerSearch{flex:1;min-width:320px}
+.overview{max-height:520px;overflow:auto;border:1px solid #d9e3df;border-radius:8px} a{color:#075e54;font-weight:700} .hidden{display:none}
+</style></head><body>
+<h1>Pharmacy Operations and Worker Activity Report</h1>
+<p>Report date: 2026-08-03</p>
+<section class='summary'><h2>Business summary</h2><div class='summary-grid'>
+  <div><span>Cameras processed</span><strong>1</strong></div>
+  <div><span>Worker groups in report</span><strong>1</strong></div>
+  <div><span>Active worker sessions</span><strong>0</strong></div>
+  <div><span>Global anonymous IDs established</span><strong>0</strong></div>
+  <div><span>Camera-local worker sessions</span><strong>1</strong></div>
+  <div><span>Workers seen on multiple cameras</span><strong>0</strong></div>
+  <div><span>Identity associations to review</span><strong>0</strong></div>
+  <div><span>Trusted worker groups</span><strong>1</strong></div>
+  <div><span>Trusted completed services</span><strong>1</strong></div>
+  <div><span>Completed services requiring review</span><strong>0</strong></div>
+  <div><span>Legacy incomplete services</span><strong>1</strong></div>
+  <div><span>Customers currently waiting</span><strong>0</strong></div>
+  <div><span>Average waiting time</span><strong>00:00:14</strong></div>
+  <div><span>Median waiting time</span><strong>00:00:14</strong></div>
+  <div><span>Longest waiting time</span><strong>00:00:18</strong></div>
+  <div><span>Average service time</span><strong>00:01:37</strong></div>
+  <div><span>Median service time</span><strong>00:01:37</strong></div>
+  <div><span>Longest service time</span><strong>00:01:37</strong></div>
+  <div><span>Average medicine retrieval</span><strong>00:00:37</strong></div>
+  <div><span>Abandoned customers</span><strong>0</strong></div>
+  <div><span>Total confirmed work</span><strong>00:00:45</strong></div>
+  <div><span>Total customer-service time</span><strong>00:01:37</strong></div>
+  <div><span>Total shelf-work time</span><strong>00:00:00</strong></div>
+  <div><span>Confirmed idle time</span><strong>00:00:30</strong></div>
+  <div><span>Confirmed idle intervals</span><strong>1</strong></div>
+  <div><span>Workers with confirmed idle</span><strong>1</strong></div>
+  <div><span>Average idle interval</span><strong>00:00:30</strong></div>
+  <div><span>Median idle interval</span><strong>00:00:30</strong></div>
+  <div><span>Longest idle interval</span><strong>00:00:30</strong></div>
+  <div><span>Confirmed phone time</span><strong>00:00:00</strong></div>
+  <div><span>Possible phone — review</span><strong>00:00:05</strong></div>
+  <div><span>Possible idle — review</span><strong>00:00:00</strong></div>
+  <div><span>Unknown time</span><strong>00:00:10</strong></div>
+  <div><span>Reliable classification coverage (Observed time not requiring review)</span><strong>83.3%</strong></div>
+  <div><span>Reliable work percentage</span><strong>60.0%</strong></div>
+  <div><span>UNKNOWN time with recorded reason</span><strong>100.0%</strong></div>
+</div></section>
+<section class='summary'><h2>Customer-service journeys</h2>
+<p>Waiting ends when a primary worker assignment is confirmed. Total service continues while that worker retrieves medicine and returns.</p>
+<div class='overview'><table><thead><tr><th>Customer session</th><th>Camera</th><th>Arrival (UTC)</th><th>Waiting</th><th>Service start (UTC)</th><th>Total service</th><th>Direct interaction</th><th>Medicine retrieval</th><th>Assigned worker</th><th>Outcome</th><th>Trust</th><th>Review</th></tr></thead><tbody><tr><td class='session-id'>CUSTOMER-TRUSTED</td><td>1</td><td>2026-08-03 09:00:00 UTC</td><td>00:00:18</td><td>2026-08-03 09:00:18 UTC</td><td>00:01:37</td><td>00:01:00</td><td>00:00:37</td><td class='session-id'>WS-STRICT-1</td><td>COMPLETED</td><td>trusted_completed</td><td>unreviewed</td></tr><tr><td class='session-id'>CUSTOMER-LEGACY-INCOMPLETE</td><td>1</td><td>2026-08-03 09:02:00 UTC</td><td>00:00:10</td><td>2026-08-03 09:02:10 UTC</td><td>00:16:39</td><td>00:00:00</td><td>00:00:00</td><td class='session-id'>WS-STRICT-1</td><td>COMPLETED</td><td>legacy_incomplete</td><td>unreviewed</td></tr></tbody></table></div>
+</section>
+<section class='summary'><h2>Worker overview</h2>
+<p>Use this table first. Search by worker label, global ID, session ID, or camera; then open a worker's detailed evidence card.</p>
+<div class='filters'><input id='workerSearch' type='search' placeholder='Search workers, IDs, sessions, cameras' aria-label='Search workers'>
+<select id='identityFilter' aria-label='Filter by identity status'><option value=''>All identity statuses</option><option value='manager_confirmed'>Manager confirmed</option><option value='appearance_matched'>Appearance matched</option><option value='review_required'>Review required</option><option value='provisional'>Provisional</option><option value='not_linked'>Not linked</option></select></div>
+<div class='overview'><table><thead><tr><th>Worker</th><th>Global ID</th><th>Cameras</th><th>Identity status</th><th>Observed</th><th>Work observed</th><th>Confirmed idle</th><th>Possible phone</th><th>Unknown</th><th>Reliable coverage</th></tr></thead><tbody><tr class='overview-row' data-status='not_linked' data-search='unlinked worker session ws-strict-1  1 ws-strict-1'><td><a href='#worker-WS-STRICT-1'>Unlinked worker session WS-STRICT-1</a></td><td class='session-id'>Not established</td><td>1</td><td>No global ID was established</td><td>00:01:45</td><td>00:00:45</td><td>00:00:30</td><td>00:00:05</td><td>00:00:10</td><td>83.3%</td></tr></tbody></table></div>
+</section>
+
+<article class='worker-card' id='worker-WS-STRICT-1' data-status='not_linked' data-search='unlinked worker session ws-strict-1  1 ws-strict-1 not_linked'>
+  <div class='worker-head'>
+    <div>
+      <h2>Unlinked worker session WS-STRICT-1</h2>
+      <p class='session-id'>Global anonymous ID: Not established</p>
+      <p><span class='identity identity-not_linked'>No global ID was established</span></p>
+      <p class='muted'>Identity confidence: Not available. This is appearance association, not confirmed legal identity.</p>
+    </div>
+    <div class='previews'><p class='muted'>No worker face or body preview passed the quality threshold.</p></div>
+  </div>
+  <div class='facts'>
+    <div><span>Cameras</span><strong>1</strong></div>
+    <div><span>Camera sessions</span><strong>1</strong></div>
+    <div><span>First seen</span><strong>2026-08-03T09:00:00+00:00</strong></div>
+    <div><span>Last seen</span><strong>2026-08-03T09:01:45+00:00</strong></div>
+    <div><span>Observed time (camera overlap removed)</span><strong>00:01:45</strong></div>
+    <div><span>Confirmed work observed</span><strong>00:00:45</strong></div>
+    <div><span>Confirmed idle</span><strong>00:00:30</strong></div>
+    <div><span>Idle intervals</span><strong>1</strong></div>
+    <div><span>Reliable work percentage</span><strong>60.0%</strong></div>
+    <div><span>Customers served</span><strong>2</strong></div>
+    <div><span>Medicine retrieval</span><strong>00:00:37</strong></div>
+  </div>
+  <h3>What was observed</h3>
+  <table><thead><tr><th>Observed activity</th><th>Hours</th><th>Seconds</th></tr></thead><tbody><tr><td>Other observed work</td><td>00:00:45</td><td>45.0s</td></tr><tr><td>Possible phone evidence - review needed</td><td>00:00:05</td><td>5.0s</td></tr><tr><td>Confirmed idle</td><td>00:00:30</td><td>30.0s</td></tr><tr><td>Unknown - insufficient evidence</td><td>00:00:10</td><td>10.0s</td></tr></tbody></table>
+  <details><summary>Unknown time by reason</summary>
+    <table><thead><tr><th>Reason</th><th>Duration</th></tr></thead><tbody><tr><td>Pose Missing</td><td>00:00:10</td></tr></tbody></table>
+  </details>
+  <details><summary>Camera sessions (1)</summary>
+    <table><thead><tr><th>Camera</th><th>Session ID</th><th>First seen</th><th>Last seen</th></tr></thead><tbody><tr><td>1</td><td class='session-id'>WS-STRICT-1</td><td>2026-08-03 09:00:00</td><td>2026-08-03 09:01:45</td></tr></tbody></table>
+  </details>
+  <details><summary>Session-stitch audit (1)</summary>
+    <table><thead><tr><th>Previous track</th><th>New track</th><th>Gap</th><th>Confidence</th><th>Reason</th><th>Original generated session ID</th></tr></thead><tbody><tr><td>10000001</td><td>10000002</td><td>1.00s</td><td>0.94</td><td>short_gap_appearance_and_spatial_match</td><td class='session-id'>WS-GENERATED-AFTER-GAP</td></tr></tbody></table>
+  </details>
+  <details><summary>Evidence timeline (5 events)</summary>
+    <table><thead><tr><th>Camera</th><th>Start</th><th>End</th><th>Activity</th><th>Duration</th><th>Unknown reason</th><th>Review</th></tr></thead><tbody><tr><td>1</td><td>2026-08-03 09:00:00</td><td>2026-08-03 09:00:20</td><td>Other observed work</td><td>00:00:20</td><td></td><td>unreviewed</td></tr><tr><td>1</td><td>2026-08-03 09:00:35</td><td>2026-08-03 09:01:05</td><td>Confirmed idle</td><td>00:00:30</td><td></td><td>unreviewed</td></tr><tr><td>1</td><td>2026-08-03 09:01:05</td><td>2026-08-03 09:01:30</td><td>Other observed work</td><td>00:00:25</td><td></td><td>unreviewed</td></tr><tr><td>1</td><td>2026-08-03 09:01:30</td><td>2026-08-03 09:01:40</td><td>Unknown - insufficient evidence</td><td>00:00:10</td><td>pose_missing</td><td>unreviewed</td></tr><tr><td>1</td><td>2026-08-03 09:01:40</td><td>2026-08-03 09:01:45</td><td>Possible phone evidence - review needed</td><td>00:00:05</td><td></td><td>unreviewed</td></tr></tbody></table>
+  </details>
+  <details><summary>Confirmed idle timeline (1 intervals)</summary>
+    <table><thead><tr><th>Camera</th><th>Start</th><th>End</th><th>Duration</th><th>Evidence quality</th><th>Ending reason</th><th>Review</th></tr></thead><tbody><tr><td>1</td><td>2026-08-03 09:00:35 UTC</td><td>2026-08-03 09:01:05 UTC</td><td>00:00:30</td><td>HIGH</td><td>confirmed work resumed</td><td>unreviewed</td></tr></tbody></table>
+  </details>
+</article>
+<section class='summary'><h2>Unknown time by reason</h2>
+<p>These reasons explain missing or weak evidence; none of them means the worker was inactive.</p>
+<table><thead><tr><th>Reason</th><th>Duration</th></tr></thead><tbody><tr><td>Pose Missing</td><td>00:00:10</td></tr></tbody></table>
+</section>
+<section class='glossary'><h2>Plain-language guide</h2>
+<p><strong>Worker groups in report</strong> counts conservative anonymous groups. Until strong local or cross-camera evidence links sessions, one person can appear in more than one group.</p>
+<p><strong>Work observed</strong> means the cameras captured positive work evidence in configured work zones. It is not a complete productivity score.</p>
+<p><strong>Confirmed physical-phone evidence</strong> requires repeated associated phone-object observations. <strong>Possible phone</strong> remains uncertain and requires human review.</p>
+<p><strong>Confirmed idle</strong> requires stable visible tracking, reliable low movement, configured zones, no work/service evidence, and a sustained confirmation window. <strong>Possible idle</strong> requires review.</p>
+<p><strong>Unknown / insufficient evidence</strong> means the system could not determine an activity. It does not mean the worker was inactive.</p>
+<p><strong>Customer service timing</strong> depends on configured queue, service, shelf/medicine, and POS zones plus the assignment evidence rules.</p>
+<p><strong>Global anonymous ID</strong> groups camera sessions using encrypted clothing/body appearance. It is not legal identity, is limited to one day, and can be wrong when uniforms look alike.</p>
+</section>
+<section class='note'><h2>Important limitations</h2>
+<p>Camera-observed time is not payroll, attendance, discipline, or a complete record of a shift. Overlapping camera-session intervals for one global ID are counted once.</p>
+<p>Automatic appearance matches use a strict distance threshold and second-best margin. Ambiguous people are kept separate instead of silently merged. A manager can confirm or correct an association through the worker-identity review API.</p>
+<p>Captured face images are visual previews for authorized managers only. No face recognition or embeddings are used for faces. Appearance descriptors are encrypted, short-lived, worker-only, and never created for customers.</p>
+<p>UNKNOWN does not mean inactive. Possible phone and possible idle require review. Anonymous appearance matching is not confirmed identity. CCTV evidence is not payroll or disciplinary proof.</p>
+</section>
+<script>
+const search = document.getElementById('workerSearch');
+const identityFilter = document.getElementById('identityFilter');
+function applyFilters() {
+  const term = search.value.trim().toLowerCase();
+  const status = identityFilter.value;
+  document.querySelectorAll('.worker-card,.overview-row').forEach((item) => {
+    const matchesText = !term || (item.dataset.search || '').includes(term);
+    const matchesStatus = !status || item.dataset.status === status;
+    item.classList.toggle('hidden', !(matchesText && matchesStatus));
+  });
+}
+search.addEventListener('input', applyFilters);
+identityFilter.addEventListener('change', applyFilters);
+</script>
+</body></html>

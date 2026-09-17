@@ -1,0 +1,7 @@
+﻿event_id,worker_session_id,worker_label,raw_track_ids,activity,start_seconds,end_seconds,duration_seconds,confirmation_seconds,evidence_quality,unknown_reason,zone,average_body_motion,average_wrist_motion,average_elbow_motion,ending_reason,transition_type,end_transition_type,review_status
+OFFLINE-E000002,WS-20000101-C3-3F7289-002,Worker 2,2,UNKNOWN,0.4,6.6,6.2,0.0,HIGH,insufficient_temporal_evidence,shelf_interaction,0.028003,0.017345,0.091832,transition_to_shelf_work,ACTIVITY_STARTED,ACTIVITY_ENDED,unreviewed
+OFFLINE-E000001,WS-20000101-C3-3F7289-001,Worker 1,1,UNKNOWN,0.4,8.6,8.2,0.0,HIGH,insufficient_temporal_evidence,register_interaction,0.097202,0.264734,0.261956,transition_to_other_work,ACTIVITY_STARTED,ACTIVITY_ENDED,unreviewed
+OFFLINE-E000003,WS-20000101-C3-3F7289-003,Worker 3,3,UNKNOWN,0.4,12.0,11.6,0.0,LOW,low_image_quality,employee_area,0.12637,0.039002,0.022026,video_processing_ended,ACTIVITY_STARTED,ACTIVITY_ENDED,unreviewed
+OFFLINE-E000004,WS-20000101-C3-3F7289-004,Worker 4,4,UNKNOWN,5.8,12.0,6.2,0.0,MEDIUM,pose_low_confidence,cashier,0.191629,0.096174,0.08261,video_processing_ended,ACTIVITY_STARTED,ACTIVITY_ENDED,unreviewed
+OFFLINE-E000005,WS-20000101-C3-3F7289-002,Worker 2,2,SHELF_WORK,6.6,12.0,5.4,0.0,HIGH,,shelf_interaction,0.117304,0.312952,0.169667,video_processing_ended,ACTIVITY_STARTED,ACTIVITY_ENDED,unreviewed
+OFFLINE-E000006,WS-20000101-C3-3F7289-001,Worker 1,1,OTHER_WORK,8.6,12.0,3.4,0.0,HIGH,,register_interaction,0.078018,0.5231,0.262676,video_processing_ended,ACTIVITY_STARTED,ACTIVITY_ENDED,unreviewed
